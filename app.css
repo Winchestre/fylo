@@ -216,10 +216,10 @@ form{
     padding: 15px 10px;
 }
 
-.foot{
+/*.foot{
     margin-bottom: 100px;
     background-color: hsl(216, 53%, 9%);
-}
+}*/
 /*.container, .container-fluid{
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
@@ -229,3 +229,118 @@ form{
     margin-right: auto;
     margin-left: auto;
 }*/
+@media(max-width: 414px){
+    body{
+        width: 100vw;
+    }
+    main{
+        padding: 25px 20px;
+    
+    }
+    .nav-item{
+        display: inline;
+        padding: 0 10px;
+    }
+    .img-logo{
+        width: 40%;
+    }
+    .nav-link{
+        font-size: 13px;
+    }
+    .hero{
+        margin-top: 120px;
+    }
+    .img-hero{
+        width: 350px;
+    }
+    .main-hero{
+        margin-top: 14px;
+    }
+    
+    .header{
+        line-height: 1.5;
+        letter-spacing: 1.2px;
+        font-size: 22px;
+        padding-top: 20px;
+    }
+    .headed{
+        font-size: 20px;
+        margin-top: 25px;
+    }
+    .p-pad{
+        padding: 20px 0;
+    }
+    .link-nav{
+        color: hsl(198, 60%, 50%);
+
+    }
+    .p-text{
+        line-height: 1.7;
+        letter-spacing: 1px;
+        font-size: 14px;
+        font-weight: 100;
+    }
+    .h-text{
+        padding-top: 22px;
+        line-height: 1.4;
+        letter-spacing: 1px;
+        font-size: 18px;
+    }
+
+    .btn{
+    margin-top: 35px;
+    padding: 20px 100px;
+    font-size: 16px;
+    }
+    .row{
+        display: grid;
+        grid-template-columns: 1fr;
+    
+    }
+    .col-features{
+        margin-top: 45px;
+        padding-top: 25px;
+    }
+    .product-layer{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0 25px;
+        margin-top: 200px;
+    }
+    
+    .img-product{
+        width: 350px;
+    }
+    .testimonials{
+        width: 75%;
+        margin-top: 180px;
+        padding: 0 45px;
+    }
+    
+    .testimonies{
+        display: grid;
+        grid-template-columns: 1fr;
+
+    }
+    .img-quote{
+        width: 30px;
+    }
+    .testimonial-card{
+        padding: 35px 25px 20px;
+    }
+    .h4-profile{
+        font-size: 13px;
+        line-height: 1.75;
+    }
+    .img-profile{
+        width: 10%;
+    }
+    .h5-profile{
+        font-size: 12px;
+    }
+    
+    .h6-profile{
+        padding-top: 8px;
+    }
+
+}
