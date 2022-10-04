@@ -16,9 +16,9 @@
     <header>
         <div class="container">
             <img src="../fylo/images/logo.svg" alt="logo" class="logo">
-
+            <button class="mobile-toggle" aria-controls="navBarLink" aria-expanded="false"></button>
             <nav>
-                <ul class="navbar">
+                <ul class="navbar" id="navBarLink" data-visible="false">
                     <li><a href="" class="nav-link">Features</a></li>
                     <li><a href="" class="nav-link">Teams</a></li>
                     <li><a href="" class="nav-link">Sign In</a></li>
@@ -92,7 +92,7 @@
 
                 <p>Securely share files and folders with friends, family and colleagues for live collaboration. No e-mail attachments required.</p>
 
-                <a href="">See how Fylo works</a>
+                <a href="" class="fancy-link">See how Fylo works</a>
             </div>
         </div>
     </section>
@@ -201,16 +201,15 @@
             </div>
 
             <div class="socials">
-                <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                <a href=""><img src="./images/Social Icons/Github.svg" alt="" class="icons"></a>
+                <a href=""><img src="./images/Social Icons/LinkedIn.svg" alt="" class="icons"></a>
+                <a href=""><img src="./images/Social Icons/Twitter.svg" alt="" class="icons"></a>
             </div>
         </div>
 
     </footer>
     <!---------------------------------------END OF FOOTER--------------------------------------------->
 
-    <script src="https://kit.fontawesome.com/75dcd32c22.js" crossorigin="anonymous"></script>
-
+    <script src="./app.js"></script>
 </body>
 </html>

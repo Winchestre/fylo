@@ -3,22 +3,32 @@
     padding: 0;
     box-sizing: border-box;
 }
+*:root {
+    --clr--text: rgba(255, 255, 255, .875);
+    --clr--background: hsl(218, 28%, 13%);
+    --clr--background--secondary: hsl(217, 28%, 15%);
+    --clr--card: hsl(219, 30%, 18%);
+    --box--shadow: 5px 5px 10px 1px rgba(3, 3, 3, .7);
+    --clr--footer--bg: hsl(216, 53%, 9%);
+
+}
 
 body {
-    background-color: hsl(218, 28%, 13%);
-    color: #fff;
+    background-color: var(--clr--background);
+    color: var(--clr--text);
     width: 100%;    
     font-size: .8em;
     font-family: 'open sans', sans-serif;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Raleway', sans-serif;
-    color: rgba(255, 255, 255, .875);
+    color: var(--clr--text);
 }
 
 p {
-    color: rgba(255, 255, 255, .875);
+    color: var(--clr--text);
 }
 
 li {
@@ -27,11 +37,11 @@ li {
 
 a {
     text-decoration: none;
-    color: rgba(255, 255, 255, .875);
+    color: var(--clr--text);
 }
 
 header, main {
-    background-color: hsl(217, 28%, 15%);
+    background-color: var(--clr--background--secondary);
     width: 100%;
 }
 
@@ -48,6 +58,14 @@ header, main {
     width: 100px;
     height: auto;
     cursor: pointer;
+}
+
+nav {
+    position: relative;
+}
+
+.mobile-toggle {
+    display: none;
 }
 
 .navbar {
@@ -68,6 +86,7 @@ header, main {
     flex-direction: column;
     width: 85%;
     margin: auto;
+   
 }
 
 .hero-image {
@@ -94,7 +113,7 @@ header, main {
 
 .btn {
     border: none;
-    color: #fff;
+    color: var(--clr--text);
     border-radius: 25px;
     background: linear-gradient(to right, hsl(176, 68%, 64%) 18%, hsl(198, 60%, 50%) 50%);
     font-size: 1.2em;
@@ -164,11 +183,11 @@ header, main {
     margin-bottom: 1rem;
 }
 
-.productive-layer a {
+.fancy-link {
     text-decoration: none;
-    color: hsl(198, 60%, 50%);
+    color: hsl(176, 68%, 64%);
+    position: relative;
 }
-
 
 .testimonials {
     position: relative;
@@ -183,9 +202,9 @@ header, main {
 }
 
 .cards {
-    box-shadow: 5px 5px 10px 1px rgba(3, 3, 3, .7);
+    box-shadow: var(--box--shadow);
     border-radius: .3rem;
-    background-color: hsl(219, 30%, 18%);
+    background-color: var(--clr--card);
     margin-bottom: 1rem;
     height: 14rem;
     padding: 2rem 1rem;
@@ -234,8 +253,8 @@ header, main {
 
 .cta-card {
     width: 100%;
-    background-color: hsl(217, 28%, 15%);
-    box-shadow: 5px 5px 10px 1px rgba(3, 3, 3, .7);
+    background-color: var(--clr--background--secondary);
+    box-shadow: var(--box--shadow);
     border-radius: .3rem;
     padding: 2.5rem 1.5rem;
     height: 60vh;
@@ -268,7 +287,7 @@ header, main {
 
 .btn-2 {
     background: linear-gradient(to right, hsl(176, 68%, 64%) 18%, hsl(198, 60%, 50%) 50%);
-    color: #fff;
+    color: var(--clr--text);
     font-weight: 400;
     font-size: 1rem;
     border-radius: 30px;
@@ -280,7 +299,7 @@ header, main {
 footer {
     width: 100%;
     position: relative;
-    background-color: hsl(216, 53%, 9%);
+    background-color:var(--clr--footer--bg) ;
     top: 840px;
     z-index: -1;
     padding: 18rem 2rem 0;
@@ -328,17 +347,20 @@ footer {
 
 .socials {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1rem;
 }
 
-.socials li {
-    padding: 1rem;
+.social-links a {
+    padding: 0 .4em;
 }
 
-.fa-brands {
+.icons {
+    width: 1.75em;
     border: 1px solid #fff;
-    padding: .5rem;
+    padding: .15rem;
     border-radius: 50%;
 }
 
@@ -418,6 +440,28 @@ footer {
         padding: 0 1.5rem;
     }
 
+    .nav-link {
+        position: relative;
+    }
+
+    .nav-link::after{
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
+        bottom: -3px;
+        left: 0;
+
+        transition: transform 250ms ease-in-out;
+        transform: scaleX(0);
+        transform-origin: center;
+    }
+
+    .nav-link:hover::after {
+        transform: scaleX(.75);
+    }
+
     .hero {
         width: 50%;
         position: relative;
@@ -463,6 +507,22 @@ footer {
     .productive-layer {
         margin-left: 6rem;
         padding-top: 6rem;
+    }
+
+    .fancy-link::after {
+        position: absolute;
+        content: '';
+        background-color: hsl(176, 68%, 64%);
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+    }
+    
+    .fancy-link:hover::after {
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform 250ms ease-out;
     }
 
     .testimonials {
@@ -563,8 +623,49 @@ footer {
         width: 80px;
     }
 
+    .navbar {
+        position: fixed;
+        inset: 0 0 0 40%;
+        background-color: rgba(255, 255, 255, .15);
+        backdrop-filter: blur(5px);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 6rem 1.5rem;
+        gap: 3rem;
+        z-index: 1000;
+
+        transform: translateX(100%);
+        transition: transform 250ms ease;
+    }
+
+    .navbar[data-visible='true'] {
+        transform: translateX(0);
+    }
+
     .navbar a {
+        text-transform: uppercase;
         font-size: .8rem;
+    }
+
+    .mobile-toggle {
+        display: block;
+        position: absolute;
+        z-index: 9999;
+        top: 1rem;
+        right: 1.2rem;
+        background: url(./images/Hamburger\ Menu.svg);
+        background-repeat: no-repeat;
+        width: 1.5rem;
+        aspect-ratio: 1;
+        border: none;
+    }
+
+    .mobile-toggle[aria-expanded='true'] {
+        background: url(./images/Close.svg);
+        background-repeat: no-repeat;
+        width: 2rem;
+        aspect-ratio: 1;
+        border: none;
     }
 
     .hero-content h1 {
